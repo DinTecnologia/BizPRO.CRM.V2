@@ -11,9 +11,6 @@ namespace BizPRO.CRM.V2.WebApp.Controllers
         public ActionResult Index()
         {
 
-
-
-
             return View();
         }
 
