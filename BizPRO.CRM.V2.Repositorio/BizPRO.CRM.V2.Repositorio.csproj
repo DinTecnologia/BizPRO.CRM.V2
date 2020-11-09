@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD7232BF-EE6B-4F4C-8A8D-0774360A8785}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BizPRO.CRM.V2.Repositorio</RootNamespace>
+    <AssemblyName>BizPRO.CRM.V2.Repositorio</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DapperExtensions, Version=1.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DapperExtensions.1.6.3\lib\net45\DapperExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DomainValidation.1.0.0\lib\net451\DomainValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADO\AtividadeFilaApoioRepositorioDal.cs" />
+    <Compile Include="ADO\AtividadeRepositorioDal.cs" />
+    <Compile Include="ADO\AtividadesFilaRepositorioDal.cs" />
+    <Compile Include="ADO\CamposDinamicos.cs" />
+    <Compile Include="ADO\EmailRepositorioDal.cs" />
+    <Compile Include="ADO\FilaRepositorioDal.cs" />
+    <Compile Include="ADO\RelatorioRepositorioAdo.cs" />
+    <Compile Include="ADO\RepositorioDal.cs" />
+    <Compile Include="ADO\UsuarioRepositorioDal.cs" />
+    <Compile Include="Dapper\AcessoRepositorio.cs" />
+    <Compile Include="Dapper\AcoesTokensValidadeRepositorio.cs" />
+    <Compile Include="Dapper\AnotacaoRepositorio.cs" />
+    <Compile Include="Dapper\AnotacaoTipoRepositorio.cs" />
+    <Compile Include="Dapper\AnotacoesApoioRepositorio.cs" />
+    <Compile Include="Dapper\ArquivoRepositorio.cs" />
+    <Compile Include="Dapper\AspNetClaimRepositorio.cs" />
+    <Compile Include="Dapper\AspNetMatrizRepositorio.cs" />
+    <Compile Include="Dapper\AspNetRolesFilaRepositorio.cs" />
+    <Compile Include="Dapper\AspNetRolesMenuRepositorio.cs" />
+    <Compile Include="Dapper\AtendimentoAtividadeRepositorio.cs" />
+    <Compile Include="Dapper\AtendimentoOcorrenciaRepositorio.cs" />
+    <Compile Include="Dapper\AtendimentoRepositorio.cs" />
+    <Compile Include="Dapper\AtividadeApoioRepositorio.cs" />
+    <Compile Include="Dapper\AtividadeFilaRepositorio.cs" />
+    <Compile Include="Dapper\AtividadeFilasApoioRepositorio.cs" />
+    <Compile Include="Dapper\AtividadeHistoricoRepositorio.cs" />
+    <Compile Include="Dapper\AtividadeParteEnvolvidaRepositorio.cs" />
+    <Compile Include="Dapper\AtividadeRepositorio.cs" />
+    <Compile Include="Dapper\AtividadeTipoRepositorio.cs" />
+    <Compile Include="Dapper\CampoDinamicoOpcaoRepositorio.cs" />
+    <Compile Include="Dapper\CampoDinamicoPreenchidoRepositorio.cs" />
+    <Compile Include="Dapper\CampoDinamicoRepositorio.cs" />
+    <Compile Include="Dapper\CanalRepositorio.cs" />
+    <Compile Include="Dapper\ChatMensagensRepositorio.cs" />
+    <Compile Include="Dapper\ChatRepositorio.cs" />
+    <Compile Include="Dapper\ChatSolicitacaoRepositorio.cs" />
+    <Compile Include="Dapper\ChatTextoRepositorio.cs" />
+    <Compile Include="Dapper\ChatUraRepositorio.cs" />
+    <Compile Include="Dapper\CidadeRepositorio.cs" />
+    <Compile Include="Dapper\ClienteProdutoRepositorio.cs" />
+    <Compile Include="Dapper\ClienteRepositorio.cs" />
+    <Compile Include="Dapper\Comum\Repositorio.cs" />
+    <Compile Include="Dapper\Comum\RepositorioEntity.cs" />
+    <Compile Include="Dapper\ConfiguracaoContasEmailsRepositorio.cs" />
+    <Compile Include="Dapper\ConfiguracaoRepositorio.cs" />
+    <Compile Include="Dapper\ContratoProdutoRepositorio.cs" />
+    <Compile Include="Dapper\ContratoRepositorio.cs" />
+    <Compile Include="Dapper\DashboardRepositorio.cs" />
+    <Compile Include="Dapper\DepartamentoRepositorio.cs" />
+    <Compile Include="Dapper\EmailAnexoRepositorio.cs" />
+    <Compile Include="Dapper\EmailLogRepositorio.cs" />
+    <Compile Include="Dapper\EmailModeloRepositorio.cs" />
+    <Compile Include="Dapper\EmailRemetenteRegraRepositorio.cs" />
+    <Compile Include="Dapper\EmailRepositorio.cs" />
+    <Compile Include="Dapper\EnderecoRepositorio.cs" />
+    <Compile Include="Dapper\EntidadeCampoValorRepositorio.cs" />
+    <Compile Include="Dapper\EntidadeRepositorio.cs" />
+    <Compile Include="Dapper\EntidadeSecaoCampoDinamicoRepositorio.cs" />
+    <Compile Include="Dapper\EntidadeSecaoRepositorio.cs" />
+    <Compile Include="Dapper\EquipeRepositorio.cs" />
+    <Compile Include="Dapper\FeriadoRepositorio.cs" />
+    <Compile Include="Dapper\FilaRepositorio.cs" />
+    <Compile Include="Dapper\FuncionalidadeRepositorio.cs" />
+    <Compile Include="Dapper\IAplicacaoRepositorio.cs" />
+    <Compile Include="Dapper\IntegracaoControleRepositorio.cs" />
+    <Compile Include="Dapper\LigacaoRepositorio.cs" />
+    <Compile Include="Dapper\ListaDePrecosProdutoRepositorio.cs" />
+    <Compile Include="Dapper\ListasDePrecosRepositorio.cs" />
+    <Compile Include="Dapper\LocaisLocalTipoAtendimentoRepositorio.cs" />
+    <Compile Include="Dapper\LocalRepositorio.cs" />
+    <Compile Include="Dapper\LocalServicoRepositorio.cs" />
+    <Compile Include="Dapper\LocalTipoAtendimentoRepositorio.cs" />
+    <Compile Include="Dapper\LocalTipoRepositorio.cs" />
+    <Compile Include="Dapper\LogAcessoRepositorio.cs" />
+    <Compile Include="Dapper\MenuRepositorio.cs" />
+    <Compile Include="Dapper\MidiaRepositorio.cs" />
+    <Compile Include="Dapper\OcorrenciaAcompanhamentoRepositorio.cs" />
+    <Compile Include="Dapper\OcorrenciaLocalTipoAtendimentoRepositorio.cs" />
+    <Compile Include="Dapper\OcorrenciaRepositorio.cs" />
+    <Compile Include="Dapper\OcorrenciaTipoRepositorio.cs" />
+    <Compile Include="Dapper\OcorrenciaTiposXOcorrenciaRepositorio.cs" />
+    <Compile Include="Dapper\OcorrenciaXstatusEntidadeApoioRepositorio.cs" />
+    <Compile Include="Dapper\PausaMotivoRepositorio.cs" />
+    <Compile Include="Dapper\PausaRepositorio.cs" />
+    <Compile Include="Dapper\PerfilRepositorio.cs" />
+    <Compile Include="Dapper\PessoaFisicaRepositorio.cs" />
+    <Compile Include="Dapper\PessoaJuridicaContatoRepositorio.cs" />
+    <Compile Include="Dapper\PessoaJuridicaRepositorio.cs" />
+    <Compile Include="Dapper\PessoaJuridicaTiposContatoRepositorio.cs" />
+    <Compile Include="Dapper\PotenciaisClienteRepositorio.cs" />
+    <Compile Include="Dapper\ProdutoRepositorio.cs" />
+    <Compile Include="Dapper\ProdutoTipoRepositorio.cs" />
+    <Compile Include="Dapper\RelatorioRepositorio.cs" />
+    <Compile Include="Dapper\ReportRepositorio.cs" />
+    <Compile Include="Dapper\RoleClaimRepositorio.cs" />
+    <Compile Include="Dapper\ServicoRepositorio.cs" />
+    <Compile Include="Dapper\StatusAtividadeRepositorio.cs" />
+    <Compile Include="Dapper\StatusEntidadeRepositorio.cs" />
+    <Compile Include="Dapper\TarefaAtividadeOcorrenciaRepositorio.cs" />
+    <Compile Include="Dapper\TarefaRepositorio.cs" />
+    <Compile Include="Dapper\TelefoneRepositorio.cs" />
+    <Compile Include="Dapper\TelefonesTiposRepositorio.cs" />
+    <Compile Include="Dapper\TerminaisUsuarioRepositorio.cs" />
+    <Compile Include="Dapper\TextoCategoriaRepositorio.cs" />
+    <Compile Include="Dapper\TextoFilaRepositorio.cs" />
+    <Compile Include="Dapper\TextoFormatoRepositorio.cs" />
+    <Compile Include="Dapper\TextoRepositorio.cs" />
+    <Compile Include="Dapper\TextoTipoRepositorio.cs" />
+    <Compile Include="Dapper\TimelineApoioRepositorio.cs" />
+    <Compile Include="Dapper\TokenAcessoRapidoRepositorio.cs" />
+    <Compile Include="Dapper\UsuarioRepositorio.cs" />
+    <Compile Include="Dapper\VendasProdutosRepositorio.cs" />
+    <Compile Include="Dapper\VendasRepositorio.cs" />
+    <Compile Include="Entity\RepositorioEntity.cs" />
+    <Compile Include="Entity\UsuarioRepositorio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Contexto\BizPRO.CRM.V2.Contexto.csproj">
+      <Project>{ae769a00-0c19-4b3c-9c28-b44d3a72d43d}</Project>
+      <Name>BizPRO.CRM.V2.Contexto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Core\BizPRO.CRM.V2.Core.csproj">
+      <Project>{20994141-6bc8-4c2a-bf8f-f7927127bd6b}</Project>
+      <Name>BizPRO.CRM.V2.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Dominio\BizPRO.CRM.V2.Dominio.csproj">
+      <Project>{7c838d2c-a5c5-4265-af4a-b260b11e9f77}</Project>
+      <Name>BizPRO.CRM.V2.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

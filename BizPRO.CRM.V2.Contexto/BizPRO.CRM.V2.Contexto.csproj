@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE769A00-0C19-4B3C-9C28-B44D3A72D43D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BizPRO.CRM.V2.Contexto</RootNamespace>
+    <AssemblyName>BizPRO.CRM.V2.Contexto</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DapperExtensions, Version=1.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DapperExtensions.1.6.3\lib\net45\DapperExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DomainValidation.1.0.0\lib\net451\DomainValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrudContext.cs" />
+    <Compile Include="DapperContexto.cs" />
+    <Compile Include="EntityConfig\UsuarioConfig.cs" />
+    <Compile Include="Interfaces\IDapperContexto.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IUnitOfWorkEntity.cs" />
+    <Compile Include="Mapeamento\AcessoMapper.cs" />
+    <Compile Include="Mapeamento\AcoesTokensValidadeMapper.cs" />
+    <Compile Include="Mapeamento\AnotacaoMapper.cs" />
+    <Compile Include="Mapeamento\AnotacaoTipoMapper.cs" />
+    <Compile Include="Mapeamento\AplicacaoMapper.cs" />
+    <Compile Include="Mapeamento\ArquivoMapper.cs" />
+    <Compile Include="Mapeamento\AspNetClaimMapper.cs" />
+    <Compile Include="Mapeamento\AspNetMatrizMapper.cs" />
+    <Compile Include="Mapeamento\AspNetRolesFilaMapper.cs" />
+    <Compile Include="Mapeamento\AspNetRolesMenuMapper.cs" />
+    <Compile Include="Mapeamento\AtendimentoAtividadeMapper.cs" />
+    <Compile Include="Mapeamento\AtendimentoMapper.cs" />
+    <Compile Include="Mapeamento\AtendimentoOcorrenciaMapper.cs" />
+    <Compile Include="Mapeamento\AtividadeFilaMapper.cs" />
+    <Compile Include="Mapeamento\AtividadeFilasApoioMapper.cs" />
+    <Compile Include="Mapeamento\AtividadeMapper.cs" />
+    <Compile Include="Mapeamento\AtividadeParteEnvolvidaMapper.cs" />
+    <Compile Include="Mapeamento\AtividadeTipoMapper.cs" />
+    <Compile Include="Mapeamento\CampoDinamicoMapper.cs" />
+    <Compile Include="Mapeamento\CampoDinamicoOpcaoMapper.cs" />
+    <Compile Include="Mapeamento\CampoDinamicoPreenchidoMapper.cs" />
+    <Compile Include="Mapeamento\CanalMapper.cs" />
+    <Compile Include="Mapeamento\ChatMapper.cs" />
+    <Compile Include="Mapeamento\ChatMensagemMapper.cs" />
+    <Compile Include="Mapeamento\ChatSolicitacaoMapper.cs" />
+    <Compile Include="Mapeamento\ChatUraMapper.cs" />
+    <Compile Include="Mapeamento\CidadeMapper.cs" />
+    <Compile Include="Mapeamento\ClienteMapper.cs" />
+    <Compile Include="Mapeamento\ClienteProdutoMapper.cs" />
+    <Compile Include="Mapeamento\ConfiguracaoContasEmailsMapper.cs" />
+    <Compile Include="Mapeamento\ConfiguracaoMapper.cs" />
+    <Compile Include="Mapeamento\ContratoMapper.cs" />
+    <Compile Include="Mapeamento\ContratoProdutoMapper.cs" />
+    <Compile Include="Mapeamento\DashboardMapper.cs" />
+    <Compile Include="Mapeamento\DepartamentoMapper.cs" />
+    <Compile Include="Mapeamento\EmailAnexoMapper.cs" />
+    <Compile Include="Mapeamento\EmailLogMapper.cs" />
+    <Compile Include="Mapeamento\EmailMapper.cs" />
+    <Compile Include="Mapeamento\EmailModeloMapper.cs" />
+    <Compile Include="Mapeamento\EntidadeCampoValorMapper.cs" />
+    <Compile Include="Mapeamento\EntidadeMapper.cs" />
+    <Compile Include="Mapeamento\EntidadeSecaoCampoDinamicoMapper.cs" />
+    <Compile Include="Mapeamento\EntidadeSecaoMapper.cs" />
+    <Compile Include="Mapeamento\EquipeMapper.cs" />
+    <Compile Include="Mapeamento\FeriadoMapper.cs" />
+    <Compile Include="Mapeamento\FilaMapper.cs" />
+    <Compile Include="Mapeamento\FuncionalidadeMapper.cs" />
+    <Compile Include="Mapeamento\IntegracaoControleMapper.cs" />
+    <Compile Include="Mapeamento\LigacaoMapper.cs" />
+    <Compile Include="Mapeamento\LocaisLocalTipoAtendimentoMapper.cs" />
+    <Compile Include="Mapeamento\LocalMapper.cs" />
+    <Compile Include="Mapeamento\LocalServicoMapper.cs" />
+    <Compile Include="Mapeamento\LocalTipoAtendimentoMapper.cs" />
+    <Compile Include="Mapeamento\LocalTipoMapper.cs" />
+    <Compile Include="Mapeamento\MenuMapper.cs" />
+    <Compile Include="Mapeamento\MidiaMapper.cs" />
+    <Compile Include="Mapeamento\MotivoPausaMapper.cs" />
+    <Compile Include="Mapeamento\OcorrenciaAcompanhamentoMapper.cs" />
+    <Compile Include="Mapeamento\OcorrenciaLocalTipoAtendimentoMapper.cs" />
+    <Compile Include="Mapeamento\OcorrenciaMapper.cs" />
+    <Compile Include="Mapeamento\OcorrenciaTipoMapper.cs" />
+    <Compile Include="Mapeamento\PausaMapper.cs" />
+    <Compile Include="Mapeamento\PerfilMapper.cs" />
+    <Compile Include="Mapeamento\PessoaFisicaMapper.cs" />
+    <Compile Include="Mapeamento\PessoaJuridicaContatoMapper.cs" />
+    <Compile Include="Mapeamento\PessoaJuridicaMapper.cs" />
+    <Compile Include="Mapeamento\PessoaJuridicaTiposContatoMapper.cs" />
+    <Compile Include="Mapeamento\PotenciaisClienteMapper.cs" />
+    <Compile Include="Mapeamento\ProdutoMapper.cs" />
+    <Compile Include="Mapeamento\ProdutoTipoMapper.cs" />
+    <Compile Include="Mapeamento\RespostaMapper.cs" />
+    <Compile Include="Mapeamento\RoleClaimMapper.cs" />
+    <Compile Include="Mapeamento\ServicoMapper.cs" />
+    <Compile Include="Mapeamento\StatusAtividadeMapper.cs" />
+    <Compile Include="Mapeamento\StatusEntidadeMapper.cs" />
+    <Compile Include="Mapeamento\TarefaMapper.cs" />
+    <Compile Include="Mapeamento\TelefoneMapper.cs" />
+    <Compile Include="Mapeamento\TerminaisUsuarioMapper.cs" />
+    <Compile Include="Mapeamento\TextoCategoriaMapper.cs" />
+    <Compile Include="Mapeamento\TextoFilaMapper.cs" />
+    <Compile Include="Mapeamento\TextoFormatoMapper.cs" />
+    <Compile Include="Mapeamento\TextoMapper.cs" />
+    <Compile Include="Mapeamento\TextoTipoMapper.cs" />
+    <Compile Include="Mapeamento\TimelineApoioMapper.cs" />
+    <Compile Include="Mapeamento\TokenAcessoRapidoMapper.cs" />
+    <Compile Include="Mapeamento\UsuarioMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="UnitOfWorkEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Core\BizPRO.CRM.V2.Core.csproj">
+      <Project>{20994141-6bc8-4c2a-bf8f-f7927127bd6b}</Project>
+      <Name>BizPRO.CRM.V2.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Dominio\BizPRO.CRM.V2.Dominio.csproj">
+      <Project>{7c838d2c-a5c5-4265-af4a-b260b11e9f77}</Project>
+      <Name>BizPRO.CRM.V2.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

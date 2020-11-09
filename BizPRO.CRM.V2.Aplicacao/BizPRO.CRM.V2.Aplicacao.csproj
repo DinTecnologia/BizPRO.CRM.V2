@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42FF2740-6576-4EC0-B427-C3BCD8330A99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BizPRO.CRM.V2.Aplicacao</RootNamespace>
+    <AssemblyName>BizPRO.CRM.V2.Aplicacao</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DapperExtensions, Version=1.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DapperExtensions.1.6.3\lib\net45\DapperExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DomainValidation.1.0.0\lib\net451\DomainValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.25.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.25\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbordagemAppServico.cs" />
+    <Compile Include="AcessoAppServico.cs" />
+    <Compile Include="AcoesTokensValidadeAppServico.cs" />
+    <Compile Include="Adaptadores\CampoDinamicoAdaptador.cs" />
+    <Compile Include="Adaptadores\ClienteAdaptador.cs" />
+    <Compile Include="Adaptadores\OcorrenciaAdaptador.cs" />
+    <Compile Include="Adaptadores\PessoaFisicaAdaptador.cs" />
+    <Compile Include="Adaptadores\PessoaJuridicaAdaptador.cs" />
+    <Compile Include="Adaptadores\PotenciaisClienteAdaptador.cs" />
+    <Compile Include="Adaptadores\TerminaisUsuarioAdaptador.cs" />
+    <Compile Include="Adaptadores\UsuarioAdaptador.cs" />
+    <Compile Include="AgenteChatAppServico.cs" />
+    <Compile Include="AnotacaoAppServico.cs" />
+    <Compile Include="AplicacaoAppServico.cs" />
+    <Compile Include="AppServico.cs" />
+    <Compile Include="AppServicoDapper.cs" />
+    <Compile Include="ArquivoAppServico.cs" />
+    <Compile Include="ArquivosAppServico.cs" />
+    <Compile Include="AspNetRolesFilaAppServico.cs" />
+    <Compile Include="AtendimentoAppServico.cs" />
+    <Compile Include="AtividadeApoioAppServico.cs" />
+    <Compile Include="AtividadeAppServico.cs" />
+    <Compile Include="AtividadeFilaAppServico.cs" />
+    <Compile Include="AtividadeFilasApoioAppServico.cs" />
+    <Compile Include="AtividadeHistoricoAppServico.cs" />
+    <Compile Include="BaseAppServico.cs" />
+    <Compile Include="CampoDinamicoAppServico.cs" />
+    <Compile Include="CanalAppServico.cs" />
+    <Compile Include="ChatAppServico.cs" />
+    <Compile Include="ChatClienteViewModel.cs" />
+    <Compile Include="ChatMensagensAppServico.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="ClienteAppServico.cs" />
+    <Compile Include="ConfiguracaoAppServico.cs" />
+    <Compile Include="ConfiguracaoContasEmailsAppServico.cs" />
+    <Compile Include="ContaAppServico.cs" />
+    <Compile Include="ContatoAppServico.cs" />
+    <Compile Include="ContratoAppServico.cs" />
+    <Compile Include="DashboardAppServico.cs" />
+    <Compile Include="DepartamentoAppServico.cs" />
+    <Compile Include="EmailAppServico.cs" />
+    <Compile Include="EmailTodosAnexosAppServico.cs" />
+    <Compile Include="Entidades\AspNetRolesFilaApp.cs" />
+    <Compile Include="Entidades\objDinamico.cs" />
+    <Compile Include="EquipeAppServico.cs" />
+    <Compile Include="FilaAdminAppServico.cs" />
+    <Compile Include="FilaAppService.cs" />
+    <Compile Include="GoogleAPI.cs" />
+    <Compile Include="IntegracaoAppServico.cs" />
+    <Compile Include="Interfaces\Comum\IAppServico.cs" />
+    <Compile Include="Interfaces\IAbordagemAppServico.cs" />
+    <Compile Include="Interfaces\IAcessoAppServico.cs" />
+    <Compile Include="Interfaces\IAcoesTokensValidadeAppServico.cs" />
+    <Compile Include="Interfaces\IAgenteChatAppServico.cs" />
+    <Compile Include="Interfaces\IAnotacaoAppServico.cs" />
+    <Compile Include="Interfaces\IAplicacaoAppServico.cs" />
+    <Compile Include="Interfaces\IArquivoAppServico.cs" />
+    <Compile Include="Interfaces\IArquivosAppServico.cs" />
+    <Compile Include="Interfaces\IAspNetRolesFilaAppServico.cs" />
+    <Compile Include="Interfaces\IAtendimentoAppServico.cs" />
+    <Compile Include="Interfaces\IAtividadeApoioAppServico.cs" />
+    <Compile Include="Interfaces\IAtividadeAppServico.cs" />
+    <Compile Include="Interfaces\IAtividadeFilaAppServico.cs" />
+    <Compile Include="Interfaces\IAtividadeFilasApoioAppServico.cs" />
+    <Compile Include="Interfaces\IAtividadeHistoricoAppServico.cs" />
+    <Compile Include="Interfaces\IBaseAppServico.cs" />
+    <Compile Include="Interfaces\ICampoDinamicoAppServico.cs" />
+    <Compile Include="Interfaces\ICanalAppServico.cs" />
+    <Compile Include="Interfaces\ICategoriaAppServico.cs" />
+    <Compile Include="Interfaces\IChatAppServico.cs" />
+    <Compile Include="Interfaces\IChatMensagensAppServico.cs" />
+    <Compile Include="Interfaces\IClienteAppServico.cs" />
+    <Compile Include="Interfaces\IConfiguracaoAppServico.cs" />
+    <Compile Include="Interfaces\IConfiguracaoContasEmailsAppServico.cs" />
+    <Compile Include="Interfaces\IContaAppServico.cs" />
+    <Compile Include="Interfaces\IContatoAppServico.cs" />
+    <Compile Include="Interfaces\IContratoAppServico.cs" />
+    <Compile Include="Interfaces\IDashboardAppServico.cs" />
+    <Compile Include="Interfaces\IDepartamentoAppServico.cs" />
+    <Compile Include="Interfaces\IEmailAppServico.cs" />
+    <Compile Include="Interfaces\IEmailTodosAnexosAppServico.cs" />
+    <Compile Include="Interfaces\IEquipeAppServico.cs" />
+    <Compile Include="Interfaces\IFilaAdminAppServico.cs" />
+    <Compile Include="Interfaces\IFilaAppServico.cs" />
+    <Compile Include="Interfaces\IIntegracaoAppServico.cs" />
+    <Compile Include="Interfaces\ILayoutAppServico.cs" />
+    <Compile Include="Interfaces\IListaDePrecosAppServico.cs" />
+    <Compile Include="Interfaces\ILocalAppServico.cs" />
+    <Compile Include="Interfaces\ILogAcessoAppServico.cs" />
+    <Compile Include="Interfaces\IMenuAppServico.cs" />
+    <Compile Include="Interfaces\IMidiaAppServico.cs" />
+    <Compile Include="Interfaces\IOcorrenciaAppServico.cs" />
+    <Compile Include="Interfaces\IOcorrenciaTipoAppServico.cs" />
+    <Compile Include="Interfaces\IOcorrenciaXstatusEntidadeAppServico.cs" />
+    <Compile Include="Interfaces\IPausaAppServico.cs" />
+    <Compile Include="Interfaces\IPessoaFisicaAppServico.cs" />
+    <Compile Include="Interfaces\IPessoaJuridicaAppServico.cs" />
+    <Compile Include="Interfaces\IPessoaJuridicaContatosAppServico.cs" />
+    <Compile Include="Interfaces\IPessoaJuridicaTiposContatoAppServico.cs" />
+    <Compile Include="Interfaces\IPotenciaisClienteAppServico.cs" />
+    <Compile Include="Interfaces\IProdutoAppServico.cs" />
+    <Compile Include="Interfaces\IProdutoTipoAppServico.cs" />
+    <Compile Include="Interfaces\IReceptivoAppServico.cs" />
+    <Compile Include="Interfaces\IRelatorioAppServico.cs" />
+    <Compile Include="Interfaces\IReportAppServico.cs" />
+    <Compile Include="Interfaces\IRoleAdminAppServico.cs" />
+    <Compile Include="Interfaces\IStatusAtividadeAppServico.cs" />
+    <Compile Include="Interfaces\IStatusEntidadeAppServico.cs" />
+    <Compile Include="Interfaces\ITarefaAppServico.cs" />
+    <Compile Include="Interfaces\ITelefoneAppServico.cs" />
+    <Compile Include="Interfaces\ITelefonesTiposAppService.cs" />
+    <Compile Include="Interfaces\ITerminaisUsuarioAppServico.cs" />
+    <Compile Include="Interfaces\ITextoAppServico.cs" />
+    <Compile Include="Interfaces\ITimelineAppServico.cs" />
+    <Compile Include="Interfaces\IUsuarioAppServico.cs" />
+    <Compile Include="Interfaces\IVendasAppServico.cs" />
+    <Compile Include="Interfaces\IViewDinamicaAppServico.cs" />
+    <Compile Include="Interfaces\LigacaoAppServico.cs" />
+    <Compile Include="LayoutAppService.cs" />
+    <Compile Include="LigacaoAppServico.cs" />
+    <Compile Include="ListasDePrecosAppServico.cs" />
+    <Compile Include="LocalAppServico.cs" />
+    <Compile Include="LogAcessoAppServico.cs" />
+    <Compile Include="Mapeamento\DominioToViewModelMapeamento.cs" />
+    <Compile Include="Mapeamento\MapeamentoConfig.cs" />
+    <Compile Include="Mapeamento\ViewModelToDominioMapeamento.cs" />
+    <Compile Include="MenuAppServico.cs" />
+    <Compile Include="MidiaAppServico.cs" />
+    <Compile Include="OcorrenciaAppServico.cs" />
+    <Compile Include="OcorrenciaTipoAppServico.cs" />
+    <Compile Include="OcorrenciaXstatusEntidadeAppServico.cs" />
+    <Compile Include="PausaAppServico.cs" />
+    <Compile Include="PessoaFisicaAppServico.cs" />
+    <Compile Include="PessoaJuridicaAppServico.cs" />
+    <Compile Include="PessoaJuridicaContatosAppServico.cs" />
+    <Compile Include="PessoaJuridicaTiposContatoAppServico.cs" />
+    <Compile Include="PotenciaisClienteAppServico.cs" />
+    <Compile Include="ProdutoAppServico.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceptivoAppServico.cs" />
+    <Compile Include="RelatorioAppServico.cs" />
+    <Compile Include="ReportAppServico.cs" />
+    <Compile Include="RetornoGoogle.cs" />
+    <Compile Include="RoleAdminAppServico.cs" />
+    <Compile Include="StatusAtividadeAppServico.cs" />
+    <Compile Include="StatusEntidadeAppServico.cs" />
+    <Compile Include="TarefaAppServico.cs" />
+    <Compile Include="TelefonesAppService.cs" />
+    <Compile Include="TelefonesTiposAppService.cs" />
+    <Compile Include="TerminaisUsuarioAppServico.cs" />
+    <Compile Include="TextoAppServico.cs" />
+    <Compile Include="TimelineAppServico.cs" />
+    <Compile Include="UsuarioAppServico.cs" />
+    <Compile Include="VendasAppServico.cs" />
+    <Compile Include="ViewDinamicaAppServico.cs" />
+    <Compile Include="ViewModels\AbasClienteViewModel.cs" />
+    <Compile Include="ViewModels\AbordagemViewModel.cs" />
+    <Compile Include="ViewModels\AcoesTokensValidadeViewModel.cs" />
+    <Compile Include="ViewModels\AdicionarEnderecoProdutoViewModel.cs" />
+    <Compile Include="ViewModels\Admin\FilaFormViewModel.cs" />
+    <Compile Include="ViewModels\Admin\FilaListViewModel.cs" />
+    <Compile Include="ViewModels\Admin\FilaViewModel.cs" />
+    <Compile Include="ViewModels\AgendamentoViewModal.cs" />
+    <Compile Include="ViewModels\AlterarFilaFormViewModel.cs" />
+    <Compile Include="ViewModels\AlterarMotivoViewModel.cs" />
+    <Compile Include="ViewModels\AlterarResponsavelViewModel.cs" />
+    <Compile Include="ViewModels\AnotacaoFormViewModel.cs" />
+    <Compile Include="ViewModels\AnotacaoViewModal.cs" />
+    <Compile Include="ViewModels\AnotacoesViewForm.cs" />
+    <Compile Include="ViewModels\ArquivoFormViewModel.cs" />
+    <Compile Include="ViewModels\ArquivoListaViewModel.cs" />
+    <Compile Include="ViewModels\ArquivoViewModel.cs" />
+    <Compile Include="ViewModels\AtendimentoChatViewModel.cs" />
+    <Compile Include="ViewModels\AtendimentoFormViewModel.cs" />
+    <Compile Include="ViewModels\AtendimentoViewModel.cs" />
+    <Compile Include="ViewModels\AtividadeApoioViewModel.cs" />
+    <Compile Include="ViewModels\AtividadeFilasApoioViewModel.cs" />
+    <Compile Include="ViewModels\AtividadeFilaViewModel.cs" />
+    <Compile Include="ViewModels\AtividadeFilterViewModel.cs" />
+    <Compile Include="ViewModels\AtividadeLigacaoAtivaViewModel.cs" />
+    <Compile Include="ViewModels\AtividadeListaViewModel.cs" />
+    <Compile Include="ViewModels\AtividadesFilaViewModel.cs" />
+    <Compile Include="ViewModels\AtividadeViewModel.cs" />
+    <Compile Include="ViewModels\CampoDinamicoBuscaViewModel.cs" />
+    <Compile Include="ViewModels\camposDinamicosViewModel.cs" />
+    <Compile Include="ViewModels\CanalViewModel.cs" />
+    <Compile Include="ViewModels\CategoriaDdlViewModel.cs" />
+    <Compile Include="ViewModels\CategoriaFormViewModel.cs" />
+    <Compile Include="ViewModels\ChatAtendimentoViewModel.cs" />
+    <Compile Include="ViewModels\ChatMensagemArquivoViewModel.cs" />
+    <Compile Include="ViewModels\ChatMensagemViewModel.cs" />
+    <Compile Include="ViewModels\ChatViewModel.cs" />
+    <Compile Include="ViewModels\CidadeViewModel.cs" />
+    <Compile Include="ViewModels\ClaimMatrizViewModel.cs" />
+    <Compile Include="ViewModels\ClienteAtendimentoViewModel.cs" />
+    <Compile Include="ViewModels\ClienteBuscaViewModel.cs" />
+    <Compile Include="ViewModels\ClienteFormViewModel.cs" />
+    <Compile Include="ViewModels\ClienteGenericoViewModel.cs" />
+    <Compile Include="ViewModels\ClienteIntegracaoViewModel.cs" />
+    <Compile Include="ViewModels\ClienteListaViewModel.cs" />
+    <Compile Include="ViewModels\ClienteNovoViewModel.cs" />
+    <Compile Include="ViewModels\ClientePerfilViewModel.cs" />
+    <Compile Include="ViewModels\ComboFilaViewModel.cs" />
+    <Compile Include="ViewModels\ConfiguracoesContaEmailsViewModel.cs" />
+    <Compile Include="ViewModels\ConfiguracoesViewModel.cs" />
+    <Compile Include="ViewModels\ContatoListaViewModel.cs" />
+    <Compile Include="ViewModels\ContatoViewModel.cs" />
+    <Compile Include="ViewModels\ContratoFormViewModel.cs" />
+    <Compile Include="ViewModels\ContratoListaViewModel.cs" />
+    <Compile Include="ViewModels\ContratoProdutoViewModel.cs" />
+    <Compile Include="ViewModels\ContratosIntegracaoViewModel.cs" />
+    <Compile Include="ViewModels\ContratoViewModel.cs" />
+    <Compile Include="ViewModels\ConversaViewModel.cs" />
+    <Compile Include="ViewModels\DashboardChatViewModel.cs" />
+    <Compile Include="ViewModels\DashboardFilaViewModel.cs" />
+    <Compile Include="ViewModels\DepartamentoViewModel.cs" />
+    <Compile Include="ViewModels\EmailAnexosViewModel.cs" />
+    <Compile Include="ViewModels\EmailFormViewModel.cs" />
+    <Compile Include="ViewModels\EmailNewViewModel.cs" />
+    <Compile Include="ViewModels\EmailViewModel.cs" />
+    <Compile Include="ViewModels\EnderecoProdutoOcorrenciaViewModel.cs" />
+    <Compile Include="ViewModels\EnderecoProdutoViewModel.cs" />
+    <Compile Include="ViewModels\EquipeViewModel.cs" />
+    <Compile Include="ViewModels\FbBotDataClassesViewModel.cs" />
+    <Compile Include="ViewModels\FilaFilterViewModel.cs" />
+    <Compile Include="ViewModels\FilaListViewModel.cs" />
+    <Compile Include="ViewModels\FilaViewModel.cs" />
+    <Compile Include="ViewModels\LayoutViewModel.cs" />
+    <Compile Include="ViewModels\LigacaoViewModel.cs" />
+    <Compile Include="ViewModels\ListaDePrecosProdutoViewModel.cs" />
+    <Compile Include="ViewModels\ListaDePrecosViewModel.cs" />
+    <Compile Include="ViewModels\listarPotenciaisClienteModelView.cs" />
+    <Compile Include="ViewModels\ListaTelefonesViewModel.cs" />
+    <Compile Include="ViewModels\LocalListaViewModel.cs" />
+    <Compile Include="ViewModels\LocalOcorrenciaViewModel.cs" />
+    <Compile Include="ViewModels\LocalPesquisaViewModel.cs" />
+    <Compile Include="ViewModels\LocalViewModel.cs" />
+    <Compile Include="ViewModels\LocaTipoAtendimentoViewModel.cs" />
+    <Compile Include="ViewModels\LoginEsqueciMinhaSenhaViewModel.cs" />
+    <Compile Include="ViewModels\MenuAdminFormViewModel.cs" />
+    <Compile Include="ViewModels\MenuNewViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\MidiaViewModel.cs" />
+    <Compile Include="ViewModels\MinhasOcorrenciasViewModel.cs" />
+    <Compile Include="ViewModels\OcorrenciaEnderecoProdutoViewModel.cs" />
+    <Compile Include="ViewModels\OcorrenciaExportacaoCamposDinamicosViewModel.cs" />
+    <Compile Include="ViewModels\OcorrenciaFormViewModel.cs" />
+    <Compile Include="ViewModels\OcorrenciaLaudoViewModel.cs" />
+    <Compile Include="ViewModels\OcorrenciaListaItemViewModel.cs" />
+    <Compile Include="ViewModels\OcorrenciaTipoViewModel.cs" />
+    <Compile Include="ViewModels\OcorrenciaViewModel.cs" />
+    <Compile Include="ViewModels\OcorrenciaXstatusEntidadeViewModel.cs" />
+    <Compile Include="ViewModels\PausaFormViewModel.cs" />
+    <Compile Include="ViewModels\PessoaFisicaFormViewModel.cs" />
+    <Compile Include="ViewModels\PessoaJuridicaContatoViewModel.cs" />
+    <Compile Include="ViewModels\PessoaJuridicaFormViewModel.cs" />
+    <Compile Include="ViewModels\PessoaJuridicaTiposContatoViewModel.cs" />
+    <Compile Include="ViewModels\PotenciaisClienteViewModel.cs" />
+    <Compile Include="ViewModels\ProdutoFormViewModel.cs" />
+    <Compile Include="ViewModels\ProdutoViewModel.cs" />
+    <Compile Include="ViewModels\ProtocoloListaViewModel.cs" />
+    <Compile Include="ViewModels\ReceptivoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioFiltrosViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioViewModel.cs" />
+    <Compile Include="ViewModels\ReportViewModel.cs" />
+    <Compile Include="ViewModels\ResultadoCamposDinamicosViewModel.cs" />
+    <Compile Include="ViewModels\SelecionarEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\statusAtendimentoViewModal.cs" />
+    <Compile Include="ViewModels\StatusAtividadeListaViewModel.cs" />
+    <Compile Include="ViewModels\StatusAtividadeViewModel.cs" />
+    <Compile Include="ViewModels\StatusEntidadeAlterarViewModel.cs" />
+    <Compile Include="ViewModels\statusEntidadeViewModal.cs" />
+    <Compile Include="ViewModels\TarefaFormViewModel.cs" />
+    <Compile Include="ViewModels\TarefaViewModel.cs" />
+    <Compile Include="ViewModels\TelefoneListaViewModel.cs" />
+    <Compile Include="ViewModels\TelefonesTiposViewModel.cs" />
+    <Compile Include="ViewModels\TelefoneViewModel.cs" />
+    <Compile Include="ViewModels\TextoCategoriaItemViewModel.cs" />
+    <Compile Include="ViewModels\TextoTreeViewModel.cs" />
+    <Compile Include="ViewModels\TextoViewModel.cs" />
+    <Compile Include="ViewModels\TodosAnexosViewModel.cs" />
+    <Compile Include="ViewModels\UploadFileViewModel.cs" />
+    <Compile Include="ViewModels\UsuarioRegisterViewModel.cs" />
+    <Compile Include="ViewModels\UsuarioViewModel.cs" />
+    <Compile Include="ViewModels\VendasFormViewModel.cs" />
+    <Compile Include="ViewModels\VendasProdutosFormViewModel.cs" />
+    <Compile Include="ViewModels\ViewDinamicaViewModel.cs" />
+    <Compile Include="ViewModels\_LigacaoViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Contexto\BizPRO.CRM.V2.Contexto.csproj">
+      <Project>{ae769a00-0c19-4b3c-9c28-b44d3a72d43d}</Project>
+      <Name>BizPRO.CRM.V2.Contexto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Core\BizPRO.CRM.V2.Core.csproj">
+      <Project>{20994141-6bc8-4c2a-bf8f-f7927127bd6b}</Project>
+      <Name>BizPRO.CRM.V2.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Dominio\BizPRO.CRM.V2.Dominio.csproj">
+      <Project>{7c838d2c-a5c5-4265-af4a-b260b11e9f77}</Project>
+      <Name>BizPRO.CRM.V2.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizPRO.CRM.V2.Identity\BizPRO.CRM.V2.Identity.csproj">
+      <Project>{979e4882-22b4-4863-9caf-c7eb7f200fa5}</Project>
+      <Name>BizPRO.CRM.V2.Identity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
